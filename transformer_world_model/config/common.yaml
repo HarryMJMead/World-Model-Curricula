@@ -1,0 +1,21 @@
+project: World_Model_Training
+run_name: None
+seed: 1
+# === Train vs Eval ===
+mode: train
+checkpoint_directory: None
+checkpoint_to_eval: -1
+# === CHECKPOINTING ===
+checkpoint_save_interval: -1
+max_number_of_checkpoints: 5
+
+resume_run: False
+resume_run_id: None
+# === EVAL ===
+eval_freq: 100
+eval_num_attempts: 10
+
+log_animations: False
+
+# === ENV CONFIG ===
+agent_view_size: 5

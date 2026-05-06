@@ -1,0 +1,32 @@
+defaults:
+  - common
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+group: DR
+
+# === CHECKPOINTING ===
+checkpoint_save_interval: 1000
+max_number_of_checkpoints: 1
+
+# === PPO ===
+anneal_lr: False
+num_updates: 10000
+num_env_steps: null
+num_train_envs: 256
+num_steps: 512
+lr: 5e-4
+max_grad_norm: 0.5
+num_minibatches: 4
+gamma: 0.995
+epoch_ppo: 4
+clip_eps: 0.04
+gae_lambda: 0.95
+entropy_coeff: 1e-3
+critic_coeff: 0.5
+
+# === DR CONFIG ===
+n_walls: 60
+max_height: 13
+max_width: 13

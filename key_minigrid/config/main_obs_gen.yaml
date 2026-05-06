@@ -1,0 +1,55 @@
+defaults:
+  - common
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+# === CHECKPOINTING ===
+checkpoint_save_interval: 1000
+max_number_of_checkpoints: 1
+
+# === Obs Gen ===
+num_pro_traj: 1
+reward_mix: 1
+set_start: False
+score_function: mna
+
+# === Env ===
+max_height: 13
+max_width: 13
+max_steps_in_episode: 250
+
+# === PPO === 
+num_updates: 10000
+num_env_steps: null
+num_train_envs: 256
+# === Student hyperparams ===
+student_num_steps: 512
+student_anneal_lr: False
+student_lr: 5e-4
+student_max_grad_norm: 0.5
+student_num_minibatches: 4
+student_gamma: 0.995
+student_epoch_ppo: 4
+student_clip_eps: 0.04
+student_gae_lambda: 0.95
+student_entropy_coeff: 1e-3
+student_critic_coeff: 0.5
+student_kl_coeff: 0
+# === Adversary hyperparams ===
+adv_random_z_dimension: 16
+adv_zero_out_random_z: False
+adv_num_steps: 171
+adv_anneal_lr: False
+adv_lr: 1e-3
+adv_max_grad_norm: 0.5
+adv_num_minibatches: 4
+adv_gamma: 0.998
+adv_epoch_ppo: 4
+adv_clip_eps: 0.2
+adv_gae_lambda: 0.95
+adv_entropy_coeff: 5e-2
+adv_critic_coeff: 0.5
+
+# === Generator Hyperparams ===
+goal_prob: 0.01

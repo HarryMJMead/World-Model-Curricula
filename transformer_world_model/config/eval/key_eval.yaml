@@ -1,0 +1,10 @@
+levels: [
+    "SixteenRooms_Key",
+    "SixteenRooms2_Key",
+    "FourRooms_Key",
+    "FourRooms2_Key",
+    "FourRooms3_Key",
+    "StandardMaze_Key",
+    "StandardMaze2_Key",
+    "StandardMaze3_Key",
+]

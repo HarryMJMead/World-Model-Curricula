@@ -1,0 +1,30 @@
+project: key_minigrid_WM_UED
+run_name: None
+seed: 1
+# === Train vs Eval ===
+mode: train
+checkpoint_directory: None
+checkpoint_to_eval: -1
+# === CHECKPOINTING ===
+checkpoint_save_interval: -1
+max_number_of_checkpoints: 5
+# === EVAL ===
+eval_freq: 100
+eval_num_attempts: 10
+eval_levels: [
+    "SixteenRooms_Key",
+    "SixteenRooms2_Key",
+    "FourRooms_Key",
+    "FourRooms2_Key",
+    "FourRooms3_Key",
+    "StandardMaze_Key",
+    "StandardMaze2_Key",
+    "StandardMaze3_Key",
+]
+
+# === ENV CONFIG ===
+agent_view_size: 5
+
+# === WandB ===
+group: DEGen
+log_animations: False

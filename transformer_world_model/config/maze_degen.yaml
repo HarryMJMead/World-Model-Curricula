@@ -1,0 +1,61 @@
+defaults:
+  - world_model
+  - eval: key_eval
+  - world_model: key_wm
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+# === WandB ===
+project: key_minigrid_WM_UED
+group: WM - DEGen
+
+# === Checkpointing ===
+checkpoint_save_interval: 100
+max_number_of_checkpoints: 1
+eval_freq: 5
+
+# === Env ===
+max_height: 13
+max_width: 13
+
+# === Adversary ===
+use_pro_obs_for_adv: False
+adv_gen_first_state: False
+
+# === World Model ===
+random_gen_actions: False
+include_key: True
+
+# === Forced World Model Only ===
+extra_rollouts: False
+use_wm_for_masking: False
+
+# === PPO === 
+num_updates: 10000
+num_env_steps: null
+num_train_envs: 256
+# === Student hyperparams ===
+student_num_steps: 512
+student_lr: 2.4e-4
+student_anneal_lr: False
+student_max_grad_norm: 0.5
+student_num_minibatches: 4
+student_gamma: 0.995
+student_epoch_ppo: 4
+student_clip_eps: 0.04
+student_gae_lambda: 0.95
+student_entropy_coeff: 1e-3
+student_critic_coeff: 0.5
+# === Adversary hyperparams ===
+adv_lr: 1e-3
+adv_anneal_lr: False
+adv_max_grad_norm: 0.5
+adv_num_minibatches: 4
+adv_gamma: 0.998
+adv_epoch_ppo: 4
+adv_clip_eps: 0.2
+adv_gae_lambda: 0.95
+adv_entropy_coeff: 1e-3
+adv_critic_coeff: 0.5
+adv_init_state_entropy_coeff: 0.0

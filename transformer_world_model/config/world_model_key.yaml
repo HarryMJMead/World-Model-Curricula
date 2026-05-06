@@ -1,0 +1,20 @@
+defaults:
+  - common
+  - world_model
+  - override generator: key_gen
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+# === Dataset ===
+dataset_path: None
+dataset_name: "data_random_mixed_fixed"
+
+# === World Model Hyperparams ===
+include_key: True
+
+# === Frozen Parameters ===
+encoder_path: None
+
+# === World Model Eval ===
+agent_path: None

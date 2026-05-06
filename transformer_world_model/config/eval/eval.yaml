@@ -1,0 +1,10 @@
+levels: [
+    "SixteenRooms",
+    "SixteenRooms2",
+    "Labyrinth",
+    "LabyrinthFlipped",
+    "Labyrinth2",
+    "StandardMaze",
+    "StandardMaze2",
+    "StandardMaze3",
+]

@@ -1,0 +1,107 @@
+defaults:
+  - common
+  - generator: gen
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+group: RoPE Transformer World Model
+
+# === Dataset ===
+dataset_path: None
+dataset_name: "data_random_mixed_fixed"
+
+# === CHECKPOINTING ===
+checkpoint_save_interval: 5000
+max_number_of_checkpoints: 5
+
+# === Training Hyperparams ===
+num_updates: 1000000 #2000000
+batch_size: 16
+eval_freq: 250
+
+# === Env ===
+num_actions: 4
+
+# === World Model Hyperparams ===
+concat_tokens: False
+sum_tokens: True
+
+image_only: False
+include_key: False
+
+anneal_lr: True
+warm_up_percentage: 0
+lr: 1e-4
+eps: 1e-5
+weight_decay: 1e-6
+max_grad_norm: 1.0
+entropy_coeff: 1e-3
+
+context_size: 128
+
+embed_dim: 768
+dropout_p: 0
+feedforward_dim: 2048
+num_heads: 8
+num_layers: 8
+normalize_qk: True
+normalize_out_heads: True
+out_heads_num_layers: 1
+
+encoder_hidden: 512
+encoder_layers: 3
+encoder_activation: gelu
+encoder_normalize: False
+encoder_conv_layers: 3
+encoder_conv_channels: 32
+
+decoder_hidden: 512
+decoder_layers: 3
+decoder_activation: gelu
+decoder_normalize: False
+decoder_conv_layers: 3
+decoder_conv_channels: 32
+
+num_latents: 32
+num_cats: 16
+noise_z: 0.0
+vary_z_noise: False
+
+# === Reward/Done Encoding ===
+use_encoded_outputs: True
+num_reward_bins: 4
+min_reward_bin: 0
+max_reward_bin: 1
+
+# === World Model Latent Generation ===
+num_gen_latents: 6
+num_gen_cats: 6
+noise_latent_gen: 0.2
+use_output_heads: True
+use_history_for_latent_encoder: True
+gen_first_obs: False
+
+# === Hybrid Latent Generation ===
+use_hybrid_gen: True
+use_hybrid_override: False
+
+# === Frozen Parameters ===
+use_frozen_encoder: True
+encoder_checkpoint_num: -1
+encoder_path:  None
+
+# === Fine Tuning ===
+use_fine_tuning: False
+fine_tune_path: None
+fine_tune_checkpoint_num: -1
+
+# === World Model Eval ===
+agent_path: None
+agent_checkpoint_num: -1
+num_eval_envs: 256
+num_eval_steps: 256
+max_height: 13
+max_width: 13
+n_walls: 60
+max_steps_in_episode: 250
