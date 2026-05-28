@@ -37,7 +37,7 @@ num_env_steps: null
 num_train_envs: 256
 # === Student hyperparams ===
 student_num_steps: 512
-student_lr: 2.4e-4
+student_lr: 5-4
 student_anneal_lr: False
 student_max_grad_norm: 0.5
 student_num_minibatches: 4

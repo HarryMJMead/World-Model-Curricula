@@ -9,7 +9,7 @@ group: RoPE Transformer World Model
 
 # === Dataset ===
 dataset_path: None
-dataset_name: "data_random_mixed_fixed"
+dataset_name: None
 
 # === CHECKPOINTING ===
 checkpoint_save_interval: 5000

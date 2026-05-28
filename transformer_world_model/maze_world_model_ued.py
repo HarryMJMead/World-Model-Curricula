@@ -383,7 +383,7 @@ def main(config: DictConfig = None, project="JAXUED_TEST"):
                 init_obs,
                 AdversaryActorCritic.initialize_carry((config["num_train_envs"],)),
                 config["num_train_envs"],
-                random_gen_actions=False,
+                random_gen_actions=config['random_gen_actions'],
                 use_pro_obs_for_adv=config['use_pro_obs_for_adv'],
             )
         else:
@@ -407,7 +407,7 @@ def main(config: DictConfig = None, project="JAXUED_TEST"):
             init_cache,
             config["num_train_envs"],
             config["student_num_steps"],
-            random_gen_actions=False,
+            random_gen_actions=config['random_gen_actions'],
         )
 
         # Add first state if it was generated

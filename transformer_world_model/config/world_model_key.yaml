@@ -8,7 +8,7 @@ defaults:
 
 # === Dataset ===
 dataset_path: None
-dataset_name: "data_random_mixed_fixed"
+dataset_name: "key_minigrid_dataset"
 
 # === World Model Hyperparams ===
 include_key: True

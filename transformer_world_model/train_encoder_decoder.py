@@ -222,7 +222,7 @@ def main(config=None, project="JAXUED_TEST"):
             checkpoint_manager.wait_until_finished()
     return runner_state[1]
 
-@hydra.main(config_path="config", config_name="world_model", version_base=None)
+@hydra.main(config_path="config", config_name="world_model_key", version_base=None)
 def config_main(config: DictConfig):
     logger.info('Initialising')
 
